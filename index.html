@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+<!--   <meta name="description" content="invertible Consistency Distillation (iCD), a generalized consistency distillation framework that facilitates both high-quality image synthesis and accurate image encoding in only 3-4 inference steps."> -->
+  <meta property="og:title" content="MADrive: Memory-Augmented Driving Scene Modeling"/>
+  <meta property="og:description" content="MADrive reconstructs driving scenes using multi-view car assets from our novel dataset, enabling photorealistic synthesis of significantly altered scene configurations."/>
+  <meta property="og:url" content="https://yandex-research.github.io/madrive/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+<!--   <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/> -->
+
+<!-- 
+  <meta name="twitter:title" content="Invertible Consistency Distillation for
+Text-Guided Image Editing in Around 7 Steps">
+  <meta name="twitter:description" content="invertible Consistency Distillation (iCD), a generalized consistency distillation framework that facilitates both high-quality image synthesis and accurate image encoding in only 3-4 inference steps.">
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>MADrive: Memory-Augmented Driving Scene Modeling</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h2 class="title is-2 publication-title">MADrive: Memory-Augmented Driving Scene Modeling</h2>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=2o1dSLkAAAAJ&hl" target="_blank">Polina Karpikova</a><sup>* 1</sup>,</span>
+                <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=N9bInaYAAAAJ&hl" target="_blank">Daniil Selikhanovych</a><sup>* 1, 2, 3</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.ru/citations?user=q69zIO0AAAAJ&hl" target="_blank">Kirill Struminsky</a><sup>* 1, 2</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=QAdqY-UAAAAJ&hl" target="_blank">Ruslan Musaev</a><sup>1, 3</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=7SlNvPcAAAAJ&hl" target="_blank">Maria Golitsyna</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://dbaranchuk.github.io/" target="_blank">Dmitry Baranchuk</a><sup>1</sup>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>Yandex Research  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <sup>2</sup>HSE University</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <sup>3</sup>Skoltech</span>
+                    <!-- <br>Conferance name and year -->
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://huggingface.co/datasets/yandex/mad-cars" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          🤗
+                        </span>
+                        <span>MAD-Cars</span>
+                      </a>
+                      </span>
+
+                      <!-- <span class="link-block">
+                        <a href="TODO" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                      </span> -->
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/yandex-research/madrive" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Soon)</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="TODO" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent advances in scene reconstruction have pushed toward highly realistic modeling of autonomous driving (AD) environments using 3D Gaussian splatting. 
+            However, the resulting reconstructions remain closely tied to the original observations and struggle to support photorealistic synthesis of significantly altered or novel driving scenarios.
+
+            This work introduces <b>MADrive</b>, a memory-augmented reconstruction framework designed to extend the capabilities of existing scene reconstruction methods by replacing observed vehicles with visually similar 3D assets retrieved from a large-scale external memory bank. 
+            Specifically, we release <b>MAD-Cars</b>, a curated dataset of ~70K 360° car videos captured in the wild and present a retrieval module that finds the most similar car instances in the memory bank, reconstructs the corresponding 3D assets from video, and integrates them into the target scene through orientation alignment and relighting.
+            The resulting replacements provide complete multi-view representations of vehicles in the scene, enabling photorealistic synthesis of substantially altered configurations, as demonstrated in our experiments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+<!-- Method -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="has-text-centered">
+          <embed src="static/images/scheme_placeholder_page-0001.jpg" width="760px"/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Given an input frame sequence, our retrieval scheme finds similar vehicles in an external database (Left). The 3D reconstruction
+pipeline then produces detailed vehicle models from the retrieved videos. The vehicles are represented with relightable 2D Gaussian splats. Opacity masks are
+used to remove background splats. The model geometry is regularized with external normals maps. (Middle) Finally, the reconstructed vehicles are adapted to
+the scene’s lighting conditions and composed with the background to produce the overall scene representation (Right).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Method -->
+
+
+<!-- Image carousel relighting -->
+
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="columns is-centered">
+          <div class="column has-text-centered">
+    <h2 class="title is-3">Relighting ablation</h2>
+
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item" style="width: 100%;">
+        <img src="static/images/relighting_images/105_w_000191_0_rgb.png" width="310px" alt="MY ALT TEXT"/>
+        <img src="static/images/relighting_images/105_wo_000191_0_rgb.png" width="310px" alt="MY ALT TEXT"/>
+      </div>
+       <div class="item" style="width: 100%;">
+        <img src="static/images/relighting_images/180_w_000055_0_rgb.png" width="310px"/>
+        <img src="static/images/relighting_images/180_wo_000055_0_rgb.png" width="310px"/>
+
+      </div>
+        <div class="item" style="width: 100%;">
+        <img src="static/images/relighting_images/190_w_000125_1_rgb.png" width="310px"/>
+        <img src="static/images/relighting_images/190_wo_000125_1_rgb.png" width="310px"/>
+
+      </div>
+        <div class="item" style="width: 100%;">
+        <img src="static/images/relighting_images/779_w_000074_0_rgb.png" width="310px"/>
+        <img src="static/images/relighting_images/779_wo_000074_0_rgb.png" width="310px"/>
+
+      </div>
+  </div>
+</div>
+</div>
+
+</section> -->
+
+<!-- Car comparison -->
+<!-- <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Car modeling comparison</h2>
+        <div class="content has-text-justified">
+          <embed src="static/images/qualitative_car_comparisons_page-0001.jpg" width="610px"/>
+          <p>
+            We provide a qualitative comparison with other car reconstruction approaches in \fig{qualitative_car_comparison}, where we visualized 
+reconstruction alternatives. 
+Given a query frame from the KITTI dataset, we compared the proposed approach with three alternatives: car reconstruction on a different car dataset~\cite{du20243drealcar}, matching with a car model from a CAD dataset~\cite{lu2024urbancad}, and running a cutting edge image-to-3D model~\cite{lin2025diffsplat}.
+Even though the latter closely matches the query frame, the second view indicates a subpar geometry recovery.
+Compared to other methods, we see that the diversity of our dataset allows \ourmethod to obtain models that closely match the query frame in terms of appearance (e.g., color, shape) and realism.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End Car comparison -->
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
