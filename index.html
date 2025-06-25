@@ -200,6 +200,40 @@ the scene’s lighting conditions and composed with the background to produce th
 </section>
 <!-- End Method -->
 
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Novel trajectories generation</h2>
+        <h3>
+            Examples of the videos from the original trajectory (left) and the videos rendered under new trajectories (right).
+        </h3>
+
+        <div style="width: 100%; margin: 0 auto;">
+          <div class="video-container">
+            <video id="trajectories-comparison-video" autoplay="" loop="" muted="" style="border-radius: 15px; width: 100%;"
+            src="videos/trajectories/color_190.mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div id="comparison-controls" style="margin-top: 20px; text-align: center;">
+            <div class="buttons is-centered">
+              <!-- <button class="button is-medium is-rounded dataset-btn active" data-scene="190">190</button>
+              <button class="button is-medium is-rounded dataset-btn" data-scene="176">176</button>
+              <button class="button is-medium is-rounded dataset-btn" data-scene="779">779</button>
+              <button class="button is-medium is-rounded dataset-btn" data-scene="158">158</button>
+              <button class="button is-medium is-rounded dataset-btn" data-scene="109">109</button> -->
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- Image carousel relighting -->
 
@@ -372,7 +406,71 @@ Compared to other methods, we see that the diversity of our dataset allows \ourm
   </div>
 </footer>
 
-<!-- Statcounter tracking code -->
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('trajectories-comparison-video');
+    const controls = document.getElementById('comparison-controls');
+    const scenes = ['109', '158', '176', '190', '779'];
+    const videoPath = './videos/trajectories/trajectory_';
+    let activeScene = scenes[0];
+  
+    function preloadImage(url) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(url);
+        img.onerror = reject;
+        img.src = url;
+      });
+    }
+  
+    // Create buttons
+    scenes.forEach(scene => {
+      const button = document.createElement('button');
+      button.className = 'button is-medium is-rounded dataset-btn';
+      button.textContent = scene;
+      button.dataset.scene = scene;
+      controls.querySelector('.buttons').appendChild(button);
+    });
+  
+    // Set initial active button
+    controls.querySelector(`button[data-scene="${activeScene}"]`).classList.add('active');
+  
+    // Button click handler
+    controls.addEventListener('click', (e) => {
+      if (e.target.matches('button')) {
+        controls.querySelector('.active').classList.remove('active');
+        e.target.classList.add('active');
+        activeScene = e.target.dataset.scene;
+        updateVideo();
+      }
+    });
+  
+    async function updateVideo() {
+      const videoSrc = `${videoPath}${activeScene}.mp4`;
+      // const posterSrc = `${videoPath}${activeScene}.jpg`;
+  
+      try {
+        // await preloadImage(posterSrc);
+  
+        video.poster = posterSrc;
+        video.src = videoSrc;
+        video.load();
+        video.play().catch(error => console.error('Error playing video:', error));
+      } catch (error) {
+        console.error('Error loading poster image:', error);
+        video.src = videoSrc;
+        video.load();
+        video.play().catch(error => console.error('Error playing video:', error));
+      }
+    }
+  
+    // Initialize video
+    updateVideo();
+  });
+  
+</script>
+
 
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
