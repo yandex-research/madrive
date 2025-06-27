@@ -112,7 +112,7 @@ Text-Guided Image Editing in Around 7 Steps">
                   </span> -->
 
                   <!-- Github link -->
-                  <span class="link-block">
+                  <!-- <span class="link-block">
                     <a href="https://github.com/yandex-research/madrive" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -120,11 +120,11 @@ Text-Guided Image Editing in Around 7 Steps">
                     </span>
                     <span>Code (Soon)</span>
                   </a>
-                </span>
+                </span> -->
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="TODO" target="_blank"
+                  <a href="https://arxiv.org/abs/2506.21520" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -421,7 +421,15 @@ Compared to other methods, we see that the diversity of our dataset allows \ourm
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{}</code></pre>
+      <pre><code>@artcile{karpikova2025madrivememoryaugmenteddrivingscene,
+  title={MADrive: Memory-Augmented Driving Scene Modeling}, 
+  author={Polina Karpikova and Daniil Selikhanovych and Kirill Struminsky and Ruslan Musaev and Maria Golitsyna and Dmitry Baranchuk},
+  year={2025},
+  eprint={2506.21520},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2506.21520}, 
+}</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
@@ -515,7 +523,7 @@ Compared to other methods, we see that the diversity of our dataset allows \ourm
   document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('reconstruction-comparison-video');
     const controls = document.getElementById('reconstruction-comparison-controls');
-    const scenes = ['109', '190', '105', '143', '180', '779' 
+    const scenes = ['109', '190', '180', '779', '105', '143',  
 
     ];
     const videoPath = './static/videos/reconstruction/comparison_';
